@@ -1,4 +1,4 @@
-# Automated VirtualBox AD Setup Script suite by @maikroservice
+# Automated VirtualBox AD Setup Script suite by @Trismah & @maikroservice
 We plugged some of the scripts from: https://github.com/clong/DetectionLab
 
 ## what is included?
