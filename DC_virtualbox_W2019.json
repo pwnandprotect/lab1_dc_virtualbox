@@ -27,7 +27,8 @@
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/oracle-cert.cer",
-        "./scripts/install-credssp-fix.ps1"
+        "./scripts/install-credssp-fix.ps1",
+        "./ADLab/ADLab.psd1"
       ],
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "{{ user `memory_size` }}"],
@@ -45,6 +46,6 @@
     "cpu_count": "2",
     "vm_name": "DC_PwnAndProtect",
     "boot_wait": "30s",
-    "output_directory": "/mnt/94a80484-ef45-47a3-a6d3-8550633eeb03/cyber/PwnAndProtect/"
+    "output_directory": "./virtualboxDC"
   }
 }

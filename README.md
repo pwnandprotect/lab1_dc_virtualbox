@@ -6,6 +6,7 @@ We plugged some of the scripts from: https://github.com/clong/DetectionLab
 
 ## requirements
 * packer from https://packer.io
+* **download the correct binary for your system from this page https://www.packer.io/downloads**
 
 ## how to run?
 ```bash

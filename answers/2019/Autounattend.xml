@@ -186,6 +186,12 @@
                     <Description>Enable WinRM</Description>
                     <Order>99</Order>
                 </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -c "Import-Module a:\ADLab.psm1 && Invoke-DCPrep -Verbose"</CommandLine>
+                    <Description>Setup DomainController</Description>
+                    <Order>11</Order>
+                    <RequiresUserInput>true</RequiresUserInput>
+                </SynchronousCommand>
                 <!-- END WITHOUT WINDOWS UPDATES -->
                 <!-- WITH WINDOWS UPDATES -->
                 <!--
