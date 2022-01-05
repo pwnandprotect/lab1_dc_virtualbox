@@ -28,7 +28,7 @@
         "./scripts/win-updates.ps1",
         "./scripts/oracle-cert.cer",
         "./scripts/install-credssp-fix.ps1",
-        "./ADLab/ADLab.psd1"
+        "./scripts/forestdeploy.ps1"
       ],
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "{{ user `memory_size` }}"],
