@@ -2,6 +2,7 @@
   "builders": [
     {
       "vm_name": "{{ user `vm_name` }}",
+      "output_directory": "{{ user `output_directory` }}",
       "type": "virtualbox-iso",
       "communicator": "winrm",
       "iso_url": "{{user `iso_url`}}",
@@ -43,6 +44,7 @@
     "memory_size": "4096",
     "cpu_count": "2",
     "vm_name": "DC_PwnAndProtect",
-    "boot_wait": "30s"
+    "boot_wait": "30s",
+    "output_directory": "/mnt/94a80484-ef45-47a3-a6d3-8550633eeb03/cyber/PwnAndProtect/"
   }
 }
