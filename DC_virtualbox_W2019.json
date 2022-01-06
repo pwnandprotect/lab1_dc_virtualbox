@@ -26,7 +26,6 @@
         "./scripts/enable-winrm.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
-        "./scripts/oracle-cert.cer",
         "./scripts/install-credssp-fix.ps1",
         "./scripts/forestdeploy.ps1"
       ],
