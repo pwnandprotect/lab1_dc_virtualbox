@@ -5,20 +5,6 @@ $Global:PlusLine = "`t[+]"
 $Global:InfoLine = "`t[*]"
 $Global:InfoLine1 = "[*]"
 
-
-function addsInstall {
-Write-Good "Installing Windows AD Domain Services Toolset."
-Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
-Write-Info "`n`nToolset installed.`n`n"
-}
-
-function forestDeploy {
-Write-Good "Generating the domain. Make note of the domain name for the ADGenerator Script to be ran after the controller is built."
-$DomainNetBiosName = $DomainName.split('.')[0]
-Install-ADDSForest -DomainName $DomainName -DomainNetBiosName $DomainNetBiosName -InstallDNS:$true
-Write-Info "`n`nRestart the controller if not instructed."
-}
-
 function Invoke-ForestDeploy {
 	Param(
 	[Parameter(Mandatory=$True)]
@@ -26,8 +12,11 @@ function Invoke-ForestDeploy {
 	[System.String]
 	$DomainName
 )
-addsInstall
-forestDeploy
-}
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 
-Invoke-ForestDeploy -DomainName pwnandprotect.local
+Invoke-ForestDeploy -DomainName pwnandprotect.local 
+$DomainNetBiosName = $DomainName.split('.')[0]
+$Secure_String_Pwd = ConvertTo-SecureString "P@ssW0rD!" -AsPlainText -Force
+Install-ADDSForest -DomainName $DomainName -DomainNetBiosName $DomainNetBiosName -InstallDNS:$true -SafeModeAdministratorPassword $Secure_String_Pwd -NoRebootOnCompletion -Force
+
+}
