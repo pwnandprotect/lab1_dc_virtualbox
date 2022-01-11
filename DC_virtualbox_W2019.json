@@ -27,7 +27,9 @@
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/install-credssp-fix.ps1",
-        "./scripts/forestdeploy.ps1"
+        "./scripts/forestdeploy.ps1",
+        "./scripts/disable-defender.ps1",
+        "./scripts/activate-adws.ps1"
       ],
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "{{ user `memory_size` }}"],

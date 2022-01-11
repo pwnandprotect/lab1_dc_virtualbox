@@ -180,12 +180,26 @@
                     <Order>10</Order>
                     <Description>Disable password expiration for vagrant user</Description>
                 </SynchronousCommand>
+
+                <!-- INSTALL AD + deploy forest -->
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c powershell -Command ". a:\ForestDeploy.ps1"</CommandLine>
+                    <CommandLine>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\forestdeploy.ps1</CommandLine>
                     <Description>Setup DomainController and Forest</Description>
                     <Order>11</Order>
-                    <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
+                <!-- Reboot? -->
+                <!-- GPOs -->
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c powershell -Command ". a:\activate-adws.ps1"</CommandLine>
+                    <Description>Activate Active Directory Web Services for the GPO changes</Description>
+                    <Order>12</Order>
+                </SynchronousCommand>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c powershell -Command ". a:\disable-defender.ps1"</CommandLine>
+                    <Description>Disable Defender</Description>
+                    <Order>13</Order>
+                </SynchronousCommand>
+
                 <!-- WITHOUT WINDOWS UPDATES -->
 
                 <SynchronousCommand wcm:action="add">
@@ -193,7 +207,6 @@
                     <Description>Enable WinRM</Description>
                     <Order>99</Order>
                 </SynchronousCommand>
-
 
                 <!-- END WITHOUT WINDOWS UPDATES -->
                 <!-- WITH WINDOWS UPDATES -->
