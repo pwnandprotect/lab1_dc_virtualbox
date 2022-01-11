@@ -4,22 +4,22 @@ We plugged some of the scripts from: https://github.com/clong/DetectionLab
 
 ## TODO List
 
-- install AD
-- reboot so that the users dont have to wait so long after AD is installed
-- create VMWare Version
-- fix the Graphicsmemory size from 4MB to 128MB (VirtualBox)
+### Major
+
 - change the username to something h4xx0ry
 - change the password to something h4xx0ry
-- enable the GPO / ACL fails again
+- create a shutdown script / use the one from detectionlab?
+
+### Next
+
+- create VMWare Version
 - create kerberoastable user? / AS-Rep-roastable?
 - remove internet access via firewall?
-- create a shutdown script / use the one from detectionlab?
 - try to setup script for Windows Server 2016 & Windows Server 2022
 - setup 2nd machine (Windows 10) in AD and connect to Forest
 - create user-account as local admin on the Windows10 machine
 - create domain user for this account
 - create constrained / unconstrained delegation user/profile
--
 
 ## requirements
 

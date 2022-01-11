@@ -15,6 +15,8 @@
       "guest_os_type": "Windows2019_64",
       "guest_additions_mode": "disable",
       "disk_size": 30720,
+      "gfx_controller": "{{ user `gfx_controller` }}",
+      "gfx_vram_size": "{{ user `gfx_vram_size` }}",
       "floppy_files": [
         "{{user `autounattend`}}",
         "./floppy/WindowsPowershell.lnk",
@@ -47,6 +49,8 @@
     "cpu_count": "2",
     "vm_name": "DC_PwnAndProtect",
     "boot_wait": "30s",
-    "output_directory": "./virtualboxDC"
+    "output_directory": "./virtualboxDC",
+    "gfx_vram_size": "64",
+    "gfx_controller": "vboxsvga"
   }
 }
