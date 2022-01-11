@@ -188,16 +188,21 @@
                     <Order>11</Order>
                 </SynchronousCommand>
                 <!-- Reboot? -->
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c powershell -Command "Restart-Computer"</CommandLine>
+                    <Description>Disable Defender</Description>
+                    <Order>12</Order>
+                </SynchronousCommand>
                 <!-- GPOs -->
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c powershell -Command ". a:\activate-adws.ps1"</CommandLine>
                     <Description>Activate Active Directory Web Services for the GPO changes</Description>
-                    <Order>12</Order>
+                    <Order>13</Order>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c powershell -Command ". a:\disable-defender.ps1"</CommandLine>
                     <Description>Disable Defender</Description>
-                    <Order>13</Order>
+                    <Order>14</Order>
                 </SynchronousCommand>
 
                 <!-- WITHOUT WINDOWS UPDATES -->
